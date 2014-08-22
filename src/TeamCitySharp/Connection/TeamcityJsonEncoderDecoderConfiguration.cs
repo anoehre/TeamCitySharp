@@ -19,6 +19,11 @@ namespace TeamCitySharp.Connection
             return new DefaultEncoder(dataWriterProvider);
         }
 
+        public IDecoder GetDecoder(bool shouldRemoveAtSign = true)
+        {
+            return GetDecoder();
+        }
+
         public IDecoder GetDecoder()
         {
             var jsonReader = new JsonReader(new DataReaderSettings(DefaultEncoderDecoderConfiguration.CombinedResolverStrategy()
